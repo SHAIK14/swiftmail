@@ -43,6 +43,7 @@ function Compose() {
         </div>
         <div className="compose__footerRight">
           <FormatColorTextIcon />
+          <AttachFileIcon />
           <LinkIcon />
           <InsertEmoticonIcon />
           <NoteAddIcon />
