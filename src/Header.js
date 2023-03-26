@@ -7,6 +7,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
 import "./css/header.css";
+
 const Header = () => {
   return (
     <div className="header">
