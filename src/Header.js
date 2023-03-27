@@ -7,8 +7,12 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
 import "./css/header.css";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 
 const Header = () => {
+  const user = useSelector(selectUser);
+  console.log(user);
   return (
     <div className="header">
       <div className="header__left">
@@ -42,7 +46,7 @@ const Header = () => {
         <IconButton>
           <AppsIcon />
         </IconButton>
-        <Avatar i />
+        <Avatar src={user?.photoURL} />
       </div>
     </div>
   );
