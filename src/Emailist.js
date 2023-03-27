@@ -28,8 +28,8 @@ const Emailist = () => {
         return (
           <Emailbody
             key={id}
-            name={data.to}
-            email={data.to}
+            name={data.fromName}
+            email={data.from}
             subject={data.subject}
             message={data.message}
             time={new Date(data.timestamp?.seconds * 1000).toLocaleTimeString()}

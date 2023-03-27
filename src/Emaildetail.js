@@ -73,8 +73,8 @@ function Emaildetail() {
             <IconButton>
               <Avatar />
             </IconButton>
-            <h4>{mail.subject}</h4>
-            <p>{mail.name}</p>
+            <h4>{mail.name}</h4>
+            <p>{mail.email}</p>
           </div>
 
           <div className="emaildetails__middleheaderRight">

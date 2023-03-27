@@ -19,13 +19,15 @@ import { closeSendMessage } from "./features/mailSlice";
 import { db } from "./firebase";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 
 function Compose() {
   const [to, setTo] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
-
+  const user = useSelector(selectUser);
   const formSubmit = (e) => {
     e.preventDefault();
     if (to === "") {
@@ -41,6 +43,8 @@ function Compose() {
       to,
       subject,
       message,
+      from: user.email,
+      fromName: user.displayName,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setTo("");

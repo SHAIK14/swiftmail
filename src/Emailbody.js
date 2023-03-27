@@ -6,7 +6,7 @@ import LabelOutlinedIcon from "@mui/icons-material/LabelOutlined";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { openMessage } from "./features/mailSlice";
-function Emailbody({ name, subject, message, time }) {
+function Emailbody({ name, subject, message, email, time }) {
   const history = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ function Emailbody({ name, subject, message, time }) {
         name,
         subject,
         message,
-
+        email,
         time,
       })
     );
