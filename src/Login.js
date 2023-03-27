@@ -1,7 +1,26 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import "./css/login.css";
+import { signin } from "./features/userSlice";
+import { auth, provider } from "./firebase";
 function Login() {
-  const login = () => {};
+  const dispatch = useDispatch();
+  const login = () => {
+    auth
+      .signInWithPopup(provider)
+      .then(({ user }) => {
+        dispatch(
+          signin({
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+            email: user.email,
+          })
+        );
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
   return (
     <div className="loginwrapper">
       <div className="logoimg">
